@@ -1,0 +1,62 @@
+<div class="row p-t-25">
+  <div class="col-sm-12">
+    <app-card [showHeader]="false" cardClass="m-b-0">
+      <mat-tab-group dynamicHeight mat-stretch-tabs="false" mat-align-tabs="start" class="account-profile">
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <i class="ti ti-user f-18 m-r-10"></i>
+            Profile
+          </ng-template>
+          <div class="m-t-25">
+            <app-ac-profile></app-ac-profile>
+          </div>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <i class="ti ti-file-text f-18 m-r-10"></i>
+            Personal Details
+          </ng-template>
+          <div class="m-t-25">
+            <app-ac-personal></app-ac-personal>
+          </div>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <i class="ti ti-id f-18 m-r-10"></i>
+            My Account
+          </ng-template>
+          <div class="m-t-25">
+            <app-ac-account></app-ac-account>
+          </div>
+        </mat-tab>
+        <mat-tab l>
+          <ng-template mat-tab-label>
+            <i class="ti ti-lock f-18 m-r-10"></i>
+            Change Password
+          </ng-template>
+          <div class="m-t-25">
+            <app-ac-password></app-ac-password>
+          </div>
+        </mat-tab>
+        <mat-tab label="my Account">
+          <ng-template mat-tab-label>
+            <i class="ti ti-users f-18 m-r-10"></i>
+            Role
+          </ng-template>
+          <div class="m-t-25">
+            <app-ac-role></app-ac-role>
+          </div>
+        </mat-tab>
+        <mat-tab label="my Account">
+          <ng-template mat-tab-label>
+            <i class="ti ti-settings f-18 m-r-10"></i>
+            Settings
+          </ng-template>
+          <div class="m-t-25">
+            <app-ac-setting></app-ac-setting>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </app-card>
+  </div>
+</div>

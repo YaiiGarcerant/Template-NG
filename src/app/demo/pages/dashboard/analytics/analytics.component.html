@@ -1,0 +1,494 @@
+<div class="row p-t-25">
+  <div class="col-md-6 col-xxl-3">
+    <app-card [showHeader]="false">
+      <div class="flex align-item-center justify-content-between">
+        <div class="f-16 f-w-600">New Orders</div>
+        <select class="form-select-sm">
+          <option>Today</option>
+          <option>Weekly</option>
+          <option selected>Monthly</option>
+        </select>
+      </div>
+      <div class="m-t-15">
+        <apx-chart
+          [series]="newOrderChart.series!"
+          [chart]="newOrderChart.chart!"
+          [colors]="preset"
+          [plotOptions]="newOrderChart.plotOptions!"
+          [xaxis]="newOrderChart.xaxis!"
+          [tooltip]="newOrderChart.tooltip!"
+        >
+        </apx-chart>
+        <div class="text-center m-y-15 f-w-600"
+          >$30200 <span class="text-primary-500 mat-caption f-w-500"><i class="ti ti-arrow-up-right"></i> 30.6%</span></div
+        >
+      </div>
+      <div class="grid">
+        <button class="b-rad-20" mat-stroked-button>View more</button>
+      </div>
+    </app-card>
+  </div>
+  <div class="col-md-6 col-xxl-3">
+    <app-card [showHeader]="false">
+      <div class="flex align-item-center justify-content-between">
+        <div class="f-16 f-w-600">New Users</div>
+        <select class="form-select-sm">
+          <option>Today</option>
+          <option>Weekly</option>
+          <option selected>Monthly</option>
+        </select>
+      </div>
+      <div class="m-t-15">
+        <apx-chart
+          [series]="newUserChart.series!"
+          [chart]="newUserChart.chart!"
+          [colors]="newUserChart.colors!"
+          [plotOptions]="newUserChart.plotOptions!"
+          [stroke]="newUserChart.stroke!"
+          [tooltip]="newUserChart.tooltip!"
+          [fill]="newUserChart.fill!"
+        >
+        </apx-chart>
+        <div class="text-center m-y-15 f-w-600"
+          >$30200 <span class="text-success-500 mat-caption f-w-500"><i class="ti ti-arrow-up-right"></i> 30.6%</span></div
+        >
+      </div>
+      <div class="grid">
+        <button class="b-rad-20" mat-stroked-button>View more</button>
+      </div>
+    </app-card>
+  </div>
+  <div class="col-md-6 col-xxl-3">
+    <app-card [showHeader]="false">
+      <div class="flex align-item-center justify-content-between">
+        <div class="f-16 f-w-600">Visitors</div>
+        <select class="form-select-sm">
+          <option>Today</option>
+          <option>Weekly</option>
+          <option selected>Monthly</option>
+        </select>
+      </div>
+      <div class="m-t-15">
+        <apx-chart
+          [series]="VisitorsChart.series!"
+          [chart]="VisitorsChart.chart!"
+          [colors]="VisitorsChart.colors!"
+          [plotOptions]="VisitorsChart.plotOptions!"
+          [yaxis]="VisitorsChart.yaxis!"
+          [grid]="VisitorsChart.grid!"
+          [xaxis]="VisitorsChart.xaxis!"
+          [dataLabels]="VisitorsChart.dataLabels!"
+        >
+        </apx-chart>
+        <div class="text-center m-y-15 f-w-600"
+          >$30200 <span class="text-warn-500 mat-caption f-w-500"><i class="ti ti-arrow-up-right"></i> 30.6%</span></div
+        >
+      </div>
+      <div class="grid">
+        <button class="b-rad-20" mat-stroked-button>View more</button>
+      </div>
+    </app-card>
+  </div>
+  <div class="col-md-6 col-xxl-3">
+    <app-card [showHeader]="false" cardClass="storage-card text-white">
+      <div class="flex align-items-center justify-content-between">
+        <div class="f-w-600">Dropbox Storage</div>
+        <div class="f-16 f-w-600">150GB</div>
+      </div>
+      <div class="m-b-15 dropbox-card">
+        <div class="avatar avatar-s">
+          <i class="ti ti-cloud f-18"></i>
+        </div>
+      </div>
+      <div class="mat-caption f-w-500">134,2GB of 150GB Users</div>
+      <div class="m-t-10">
+        <mat-progress-bar mode="determinate" [value]="75" color="warn"></mat-progress-bar>
+      </div>
+    </app-card>
+    <app-card [showHeader]="false" cardClass="balance-card text-white" padding="16">
+      <div class="flex align-items-center justify-content-between">
+        <div>
+          <p class="m-b-0 text-white text-opacity-75">Available Balance</p>
+          <h4 class="m-b-0 f-20 f-w-600 text-white">$1,234.90</h4>
+        </div>
+        <div class="avatar">
+          <i class="ti ti-arrows-left-right f-18"></i>
+        </div>
+      </div>
+    </app-card>
+  </div>
+  <div class="col-12 project-chart">
+    <app-card [showHeader]="false" padding="0">
+      <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <mat-tab label="Overview">
+          <div class="project-body p-20">
+            <div class="row">
+              <div class="col-lg-7 col-xl-8">
+                <ng-container *ngTemplateOutlet="Options"></ng-container>
+                <apx-chart
+                  [series]="overOptionsChart.series!"
+                  [chart]="overOptionsChart.chart!"
+                  [colors]="overOptionsColor"
+                  [plotOptions]="overOptionsChart.plotOptions!"
+                  [legend]="overOptionsChart.legend!"
+                  [grid]="overOptionsChart.grid!"
+                  [xaxis]="overOptionsChart.xaxis!"
+                  [dataLabels]="overOptionsChart.dataLabels!"
+                  [stroke]="overOptionsChart.stroke!"
+                  [fill]="overOptionsChart.fill!"
+                  [tooltip]="overOptionsChart.tooltip!"
+                >
+                </apx-chart>
+              </div>
+              <div class="col-lg-5 col-xl-4">
+                <ng-container *ngTemplateOutlet="project"></ng-container>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Marketing">
+          <div class="project-body p-20">
+            <div class="row">
+              <div class="col-lg-7 col-xl-8">
+                <ng-container *ngTemplateOutlet="Options"></ng-container>
+                <apx-chart
+                  [series]="marketingChart.series!"
+                  [chart]="marketingChart.chart!"
+                  [colors]="overOptionsColor"
+                  [plotOptions]="marketingChart.plotOptions!"
+                  [legend]="marketingChart.legend!"
+                  [grid]="marketingChart.grid!"
+                  [xaxis]="marketingChart.xaxis!"
+                  [dataLabels]="marketingChart.dataLabels!"
+                  [stroke]="marketingChart.stroke!"
+                  [fill]="marketingChart.fill!"
+                  [tooltip]="marketingChart.tooltip!"
+                >
+                </apx-chart>
+              </div>
+              <div class="col-lg-5 col-xl-4">
+                <ng-container *ngTemplateOutlet="project"></ng-container>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Project">
+          <div class="project-body p-20">
+            <div class="row">
+              <div class="col-lg-7 col-xl-8">
+                <ng-container *ngTemplateOutlet="Options"></ng-container>
+                <apx-chart
+                  [series]="projectChart.series!"
+                  [chart]="projectChart.chart!"
+                  [colors]="overOptionsColor"
+                  [plotOptions]="projectChart.plotOptions!"
+                  [legend]="projectChart.legend!"
+                  [grid]="projectChart.grid!"
+                  [xaxis]="projectChart.xaxis!"
+                  [dataLabels]="projectChart.dataLabels!"
+                  [stroke]="projectChart.stroke!"
+                  [fill]="projectChart.fill!"
+                  [tooltip]="projectChart.tooltip!"
+                >
+                </apx-chart>
+              </div>
+              <div class="col-lg-5 col-xl-4">
+                <ng-container *ngTemplateOutlet="project"></ng-container>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="order">
+          <div class="project-body p-20">
+            <div class="row">
+              <div class="col-lg-7 col-xl-8">
+                <ng-container *ngTemplateOutlet="Options"></ng-container>
+                <apx-chart
+                  [series]="otherChart.series!"
+                  [chart]="otherChart.chart!"
+                  [colors]="overOptionsColor"
+                  [plotOptions]="otherChart.plotOptions!"
+                  [legend]="otherChart.legend!"
+                  [grid]="otherChart.grid!"
+                  [xaxis]="otherChart.xaxis!"
+                  [dataLabels]="otherChart.dataLabels!"
+                  [stroke]="otherChart.stroke!"
+                  [fill]="otherChart.fill!"
+                  [tooltip]="otherChart.tooltip!"
+                >
+                </apx-chart>
+              </div>
+              <div class="col-lg-5 col-xl-4">
+                <ng-container *ngTemplateOutlet="project"></ng-container>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </app-card>
+  </div>
+  <div class="col-xxl-3 col-md-12">
+    <div class="row">
+      <div class="col-md-6 col-xxl-12">
+        <app-card [showHeader]="false">
+          <div class="flex align-item-center justify-content-between m-b-15">
+            <div class="avatar avatar-s currency-dollar">
+              <i class="ti ti-currency-dollar f-20"></i>
+            </div>
+            <a [matMenuTriggerFor]="paymentInfo" class="avatar avatar-s hover"><i class="ti ti-dots-vertical f-18"></i></a>
+            <mat-menu #paymentInfo="matMenu">
+              <a href="javascript:" mat-menu-item>Name</a>
+              <a href="javascript:" mat-menu-item>Date</a>
+              <a href="javascript:" mat-menu-item>Rating</a>
+              <a href="javascript:" mat-menu-item>Unread</a>
+            </mat-menu>
+          </div>
+          <div class="f-w-600">$30,200.00</div>
+          <div class="text-muted mat-caption f-w-500">Income</div>
+          <div class="m-t-10">
+            <apx-chart
+              [series]="incomeChart.series!"
+              [chart]="incomeChart.chart!"
+              [colors]="incomeChart.colors!"
+              [plotOptions]="incomeChart.plotOptions!"
+              [xaxis]="incomeChart.xaxis!"
+              [tooltip]="incomeChart.tooltip!"
+            >
+            </apx-chart>
+          </div>
+        </app-card>
+      </div>
+      <div class="col-md-6 col-xxl-12">
+        <app-card [showHeader]="false">
+          <div class="flex align-item-center justify-content-between">
+            <div class="f-w-600 f-16">Languages support</div>
+            <a [matMenuTriggerFor]="paymentInfo" class="avatar avatar-s hover"><i class="ti ti-dots-vertical f-18"></i></a>
+          </div>
+          <div class="flex align-item-center">
+            <div class="flex-shrink-0">
+              <div class="avatar avatar-xs bg-accent-200">
+                <i class="ti ti-arrow-big-right f-18"></i>
+              </div>
+            </div>
+            <div class="flex-grow-1 m-l-15">
+              <div class="f-w-500">Update version <span class="user-status bg-success-50 text-success-500">V1.1.0</span> </div>
+            </div>
+          </div>
+          <div class="m-t-10 m-b-15">
+            <apx-chart
+              [series]="languagesChart.series!"
+              [chart]="languagesChart.chart!"
+              [colors]="languagesChart.colors!"
+              [xaxis]="languagesChart.xaxis!"
+              [stroke]="languagesChart.stroke!"
+              [tooltip]="languagesChart.tooltip!"
+              [plotOptions]="languagesChart.plotOptions!"
+            >
+            </apx-chart>
+          </div>
+          <div class="row">
+            @for (task of languages; track task) {
+              <div class="col-6 m-t-10">
+                <div class="grid">
+                  <button mat-stroked-button class="b-rad-20">{{ task.name }}</button>
+                </div>
+              </div>
+            }
+          </div>
+        </app-card>
+      </div>
+    </div>
+  </div>
+  <div class="col-xxl-6 col-md-12">
+    <app-card [showHeader]="false">
+      <div class="flex align-item-center justify-content-between m-b-15">
+        <div class="f-w-600 f-16">Overview Product</div>
+        <a [matMenuTriggerFor]="paymentInfo" class="avatar avatar-s hover"><i class="ti ti-dots-vertical f-18"></i></a>
+      </div>
+      <div class="product-overview">
+        <apx-chart
+          [series]="overViewChart.series"
+          [chart]="overViewChart.chart"
+          [labels]="overViewChart.labels"
+          [fill]="overViewChart.fill"
+          [responsive]="overViewChart.responsive"
+          [colors]="overViewChart.colors"
+        ></apx-chart>
+      </div>
+      <div class="row text-center">
+        @for (task of overView_product; track task) {
+          <div class="col-6 col-lg-4 col-xxl-4">
+            <div class="overview-product-legends">
+              <p class="m-b-5"
+                ><span>{{ task.name }}</span></p
+              >
+              <div class="f-w-600">{{ task.value }}</div>
+            </div>
+          </div>
+        }
+      </div>
+      <div class="row text-center m-t-25">
+        <div class="col-sm-6 m-t-10">
+          <div class="grid">
+            <button mat-stroked-button class="b-rad-20">View All</button>
+          </div>
+        </div>
+        <div class="col-sm-6 m-t-10">
+          <div class="grid">
+            <button mat-flat-button class="b-rad-20" color="primary">Create New Page</button>
+          </div>
+        </div>
+      </div>
+    </app-card>
+  </div>
+  <div class="col-xxl-3 col-md-12">
+    <div class="row">
+      <div class="col-md-6 col-xxl-12">
+        <app-card cardTitle="Payment History" headerClass="transaction-card-header" padding="0" actionClass="card-action block">
+          <ng-template #headerOptionsTemplate>
+            <div class="avatar avatar-s hover">
+              <i class="ti ti-plus f-18"></i>
+            </div>
+          </ng-template>
+          <ul class="list-group list-group-flush">
+            @for (task of payment; track task) {
+              <li class="list-group-item">
+                <div class="flex align-item-center">
+                  <div class="flex-shrink-0 m-r-10">
+                    <div class="avatar avatar-s bg-accent-300">
+                      <img src="{{ task.img }}" alt="img" class="img-fluid" />
+                    </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="m-b-5 f-w-500">{{ task.payment_name }}</p>
+                    <div class="m-b-0 f-w-600">
+                      {{ task.amount }} <span class="mat-caption f-w-500" class="{{ task.color }}">{{ task.percentage }}</span></div
+                    >
+                  </div>
+                  <div class="flex-shrink-0 m-l-10">
+                    <a [matMenuTriggerFor]="paymentInfo" class="avatar avatar-s hover"><i class="ti ti-dots-vertical f-18"></i></a>
+                    <mat-menu #paymentInfo="matMenu">
+                      <a href="javascript:" mat-menu-item>Name</a>
+                      <a href="javascript:" mat-menu-item>Date</a>
+                      <a href="javascript:" mat-menu-item>Rating</a>
+                      <a href="javascript:" mat-menu-item>Unread</a>
+                    </mat-menu>
+                  </div>
+                </div>
+              </li>
+            }
+          </ul>
+          <ng-template #actionTemplate>
+            <div class="grid">
+              <button mat-stroked-button class="b-rad-20">View All</button>
+            </div>
+          </ng-template>
+        </app-card>
+      </div>
+      <div class="col-md-6 col-xxl-12">
+        <app-card [showHeader]="false">
+          <div class="flex align-item-center">
+            <div class="flex-shrink-0">
+              <div class="my-n4" style="width: 130px">
+                <apx-chart
+                  [series]="totalEarningChart1.series!"
+                  [chart]="totalEarningChart1.chart!"
+                  [colors]="totalEarningChart1.colors!"
+                  [plotOptions]="totalEarningChart1.plotOptions!"
+                  [fill]="totalEarningChart1.fill!"
+                  [stroke]="totalEarningChart1.stroke!"
+                >
+                </apx-chart>
+              </div>
+            </div>
+            <div class="flex-grow-1 earning-text">
+              <p class="m-b-5 f-w-500">Total Earning</p>
+              <div class="f-16 f-w-600">$45,890</div>
+            </div>
+          </div>
+        </app-card>
+        <app-card [showHeader]="false">
+          <div class="flex align-item-center">
+            <div class="flex-shrink-0">
+              <div class="my-n4" style="width: 130px">
+                <apx-chart
+                  [series]="totalEarningChart2.series!"
+                  [chart]="totalEarningChart2.chart!"
+                  [colors]="totalEarningChart2.colors!"
+                  [plotOptions]="totalEarningChart2.plotOptions!"
+                  [fill]="totalEarningChart2.fill!"
+                  [stroke]="totalEarningChart2.stroke!"
+                >
+                </apx-chart>
+              </div>
+            </div>
+            <div class="flex-grow-1 earning-text">
+              <p class="m-b-5 f-w-500">Total Earning</p>
+              <div class="f-16 f-w-600">$45,890</div>
+            </div>
+          </div>
+        </app-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #project>
+  <ul class="list-group project-report">
+    @for (list of project_report; track list) {
+      <li class="list-group-item">
+        <div class="flex align-item-center">
+          <div class="flex-shrink-0">
+            <div class="avatar avatar-s bg-accent-200">
+              <i class="{{ list.icon }} f-20"></i>
+            </div>
+          </div>
+          <div class="flex-grow-1 m-l-15">
+            <div class="row">
+              <div class="col-6 m-t-5">
+                <div class="text-muted f-w-500">{{ list.title }}</div>
+                <div class="f-w-600">{{ list.amount }}</div>
+              </div>
+              <div class="col-6 m-t-5 text-end">
+                <div class="f-w-600">{{ list.number }}</div>
+                <div class="{{ list.color }}  mat-caption f-w-500"><i class="{{ list.icon_2 }}"></i> {{ list.percentage }} </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    }
+  </ul>
+</ng-template>
+<ng-template #Options>
+  <ul class="list-inline m-b-15">
+    <li class="list-inline-item">
+      <select class="select-item">
+        <option>Today</option>
+        <option>Weekly</option>
+        <option selected>Monthly</option>
+      </select>
+    </li>
+    <li class="list-inline-item">
+      <a href="javascript:" class="avatar avatar-s border">
+        <i class="ti ti-external-link f-20"></i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="javascript:" class="avatar avatar-s border">
+        <i class="ti ti-arrows-diagonal f-20"></i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="javascript:" [matMenuTriggerFor]="paymentInfo" class="avatar avatar-s border">
+        <mat-menu #paymentInfo="matMenu">
+          <a href="javascript:" mat-menu-item>Name</a>
+          <a href="javascript:" mat-menu-item>Date</a>
+          <a href="javascript:" mat-menu-item>Rating</a>
+          <a href="javascript:" mat-menu-item>Unread</a>
+        </mat-menu>
+        <i class="ti ti-dots f-20"></i>
+      </a>
+    </li>
+  </ul>
+</ng-template>
